@@ -6,6 +6,7 @@ yes | sudo pip install matplotlib
 yes | sudo pip install keras
 yes | sudo pip install numpy
 yes | sudo pip install selenium
+yes | sudo pip install pandas
 yes | sudo pip install adjusttext
 
 #Discord
@@ -43,6 +44,8 @@ sudo echo 'tee /proc/acpi/bbswitch <<<ON' > /bin/nvidia-on
 sudo chmod +x /bin/nvidia-on
 sudo echo 'tee /proc/acpi/bbswitch <<<ON' > /bin/cudaon
 sudo chmod +x /bin/cudaon
+sudo echo 'ntfsfix /dev/sda1' > /bin/hdfix
+sudo chmod +x /bin/hdfix
 
 yaourt -S --noconfirm audacity
 

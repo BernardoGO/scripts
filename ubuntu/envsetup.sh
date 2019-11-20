@@ -37,6 +37,8 @@ yes | sudo pip3 install pandas
 yes | sudo pip3 install adjusttext
 yes | sudo pip3 install gym
 yes | sudo pip3 install gym[atari]
+yes | sudo pip3 install jupyter
+yes | sudo pip3 install tensorflow-gpu
 
 #VLC
 sudo apt-get --assume-yes install vlc

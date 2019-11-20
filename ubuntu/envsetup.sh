@@ -39,6 +39,9 @@ yes | sudo pip3 install gym
 yes | sudo pip3 install gym[atari]
 yes | sudo pip3 install jupyter
 yes | sudo pip3 install tensorflow-gpu
+yes | sudo pip3 install sklearn
+yes | sudo pip3 install opencv-python
+
 
 #VLC
 sudo apt-get --assume-yes install vlc

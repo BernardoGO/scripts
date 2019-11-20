@@ -49,7 +49,7 @@ sudo apt-get --assume-yes install vlc
 #Graphics and Video editing
 sudo apt-get --assume-yes install gimp
 sudo apt-get --assume-yes install inkscape
-sudo apt-get --assume-yes install davinci-resolve
+#sudo apt-get --assume-yes install davinci-resolve
 
 
 

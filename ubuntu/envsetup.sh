@@ -52,7 +52,10 @@ sudo apt-get --assume-yes install inkscape
 #sudo apt-get --assume-yes install davinci-resolve
 
 
+#####CONFIGS
 
+#Dash to Dock cicle windows
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'cycle-windows'
 
 #####SCRIPTS
 sudo echo 'ntfsfix /dev/sda1' > /bin/hdfix

@@ -42,6 +42,9 @@ yes | sudo pip3 install tensorflow-gpu
 yes | sudo pip3 install sklearn
 yes | sudo pip3 install opencv-python
 
+#Bluetooth audio indicator
+sudo apt-add-repository ppa:yktooo/ppa -y
+sudo apt install indicator-sound-switcher
 
 #VLC
 sudo apt-get --assume-yes install vlc
@@ -56,6 +59,8 @@ sudo apt-get --assume-yes install inkscape
 
 #Dash to Dock cicle windows
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'cycle-windows'
+#Hide mounts in DashToDock
+gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
 #####SCRIPTS
 sudo echo 'ntfsfix /dev/sda1' > /bin/hdfix

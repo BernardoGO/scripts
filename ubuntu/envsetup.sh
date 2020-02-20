@@ -41,6 +41,7 @@ yes | sudo pip3 install jupyter
 yes | sudo pip3 install tensorflow-gpu
 yes | sudo pip3 install sklearn
 yes | sudo pip3 install opencv-python
+yes | pip install jupyterlab --user
 
 #Bluetooth audio indicator
 sudo apt-add-repository ppa:yktooo/ppa -y

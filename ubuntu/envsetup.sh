@@ -22,13 +22,13 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo apt-get --assume-yes install code
 
 #Spotify
-snap install spotify
+sudo snap install spotify
 
 #Discord
 sudo snap install discord
 
 #Docker
-sudo apt install docker.io
+sudo apt-get --assume-yes install docker.io
 
 #Python packages
 yes | sudo pip3 install argparse

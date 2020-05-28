@@ -27,6 +27,9 @@ snap install spotify
 #Discord
 sudo snap install discord
 
+#Docker
+sudo apt install docker.io
+
 #Python packages
 yes | sudo pip3 install argparse
 yes | sudo pip3 install matplotlib
@@ -42,6 +45,9 @@ yes | sudo pip3 install tensorflow-gpu
 yes | sudo pip3 install sklearn
 yes | sudo pip3 install opencv-python
 yes | pip install jupyterlab --user
+
+#GNOME Exts/Apps
+sudo apt-get install gnome-tweak-tool
 
 #Bluetooth audio indicator
 sudo apt-add-repository ppa:yktooo/ppa -y

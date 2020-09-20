@@ -69,6 +69,17 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'cycle-window
 #Hide mounts in DashToDock
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
+
+#gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'google-chrome.desktop']"
+
+gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'terminator.desktop', 'org.gnome.Nautilus.desktop', 'spotify_spotify.desktop']"
+
 #####SCRIPTS
 sudo echo 'ntfsfix /dev/sda1' > /bin/hdfix
 sudo chmod +x /bin/hdfix
+
+
+
+
+
+

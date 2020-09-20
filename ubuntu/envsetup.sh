@@ -74,6 +74,13 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
 gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'terminator.desktop', 'org.gnome.Nautilus.desktop', 'spotify_spotify.desktop']"
 
+wget -O shortcuts.py https://raw.githubusercontent.com/BernardoGO/scripts/master/ubuntu/set_shortcuts.py?token=AAMIH6TFDYV27E5FL6EJ7XC7ODLKU
+
+python3 shortcuts.py 'Open Nautilus' 'nautilus' '<Super>e'  
+python3 shortcuts.py 'Open Spotify' 'spotify' '<Super>w'  
+
+rm shortcuts.py
+
 #####SCRIPTS
 sudo echo 'ntfsfix /dev/sda1' > /bin/hdfix
 sudo chmod +x /bin/hdfix

@@ -1,5 +1,5 @@
 #Python3 PIP
-sudo apt install python3-pip
+sudo apt-get --assume-yes install python3-pip
 
 #Automake and Make
 sudo apt-get --assume-yes install automake make
@@ -47,11 +47,11 @@ yes | sudo pip3 install opencv-python
 yes | pip install jupyterlab --user
 
 #GNOME Exts/Apps
-sudo apt-get install gnome-tweak-tool
+sudo apt-get --assume-yes install gnome-tweak-tool
 
 #Bluetooth audio indicator
 sudo apt-add-repository ppa:yktooo/ppa -y
-sudo apt install indicator-sound-switcher
+sudo apt-get --assume-yes install indicator-sound-switcher
 
 #VLC
 sudo apt-get --assume-yes install vlc

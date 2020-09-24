@@ -1,3 +1,5 @@
+sudo apt-get --assume-yes install build-essential libgtk-3-dev
+
 #Python3 PIP
 sudo apt-get --assume-yes install python3-pip
 

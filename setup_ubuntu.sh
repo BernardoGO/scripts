@@ -1,3 +1,18 @@
+read -p "Setup GitHub? [Y/n]" -n 1 -r
+echo  
+if [[ $REPLY =~ ^[Nn]$ ]]
+then
+    echo "GitHub credentials not defined."
+else
+    read -p "Enter your GitHub Email [Default: bernardo.godinho.oliveira@gmail.com]: " github_email
+    github_email=${name:-bernardo.godinho.oliveira@gmail.com}
+    read -p "Enter your GitHub Username [Default: BernardoGO]: " github_user
+    github_user=${name:-BernardoGO}
+
+    echo "Setting GitHub Email to: ${github_email} and Username to: ${github_user}"     
+fi
+
+
 sudo apt-get --assume-yes install build-essential libgtk-3-dev
 sudo apt-get --assume-yes install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
 sudo apt-get --assume-yes install curl wget
@@ -18,8 +33,8 @@ sudo apt-get --assume-yes install automake make
 
 #Git
 sudo apt-get --assume-yes install git
-git config --global user.email "bernardo.godinho.oliveira@gmail.com"
-git config --global user.name "BernardoGO"
+git config --global user.email ${github_email}
+git config --global user.name ${github_user}
 
 #Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -86,16 +101,24 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
 gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'terminator.desktop', 'org.gnome.Nautilus.desktop', 'spotify_spotify.desktop']"
 
-wget -O shortcuts.py https://raw.githubusercontent.com/BernardoGO/scripts/master/ubuntu/set_shortcuts.py?token=AAMIH6TFDYV27E5FL6EJ7XC7ODLKU
+sudo wget -O /usr/bin/set_keybindings.py https://raw.githubusercontent.com/BernardoGO/scripts/master/gnome/set_keybindings.py
+sudo chmod +x /usr/bin/set_keybindings.py
 
-python3 shortcuts.py 'Open Nautilus' 'nautilus' '<Super>e'  
-python3 shortcuts.py 'Open Spotify' 'spotify' '<Super>w'  
+python3 set_keybindings.py 'Open Nautilus' 'nautilus' '<Super>e'  
+python3 set_keybindings.py 'Open Spotify' 'spotify' '<Super>w'  
 
-rm shortcuts.py
+#Script to run NTFSFIX on SDA1
+sudo echo -e "ntfsfix /dev/sda1" | sudo tee "/usr/bin/hdfix"
+sudo chmod +x /usr/bin/hdfix
 
-#####SCRIPTS
-sudo echo 'ntfsfix /dev/sda1' > /bin/hdfix
-sudo chmod +x /bin/hdfix
+sudo wget -O /usr/bin/clock_fix https://raw.githubusercontent.com/BernardoGO/scripts/master/clock/clock_fix
+sudo chmod +x /usr/bin/clock_fix
+
+sudo wget -O /usr/bin/clock_set https://raw.githubusercontent.com/BernardoGO/scripts/master/clock/clock_set
+sudo chmod +x /usr/bin/clock_set
+
+sudo wget -O /usr/bin/clock_set https://raw.githubusercontent.com/BernardoGO/scripts/master/nvidia/monTemp
+sudo chmod +x /usr/bin/monTemp
 
 
 

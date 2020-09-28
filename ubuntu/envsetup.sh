@@ -1,5 +1,14 @@
 sudo apt-get --assume-yes install build-essential libgtk-3-dev
 sudo apt-get --assume-yes install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+sudo apt-get --assume-yes install curl wget
+
+
+#Downloads and installs latest version of Anaconda3
+latestVer=$(curl 'https://repo.anaconda.com/archive/' | grep -oP 'href="Anaconda3-\K[0-9]+\.[0-9]+' | sort -t. -rn -k1,1 -k2,2 -k3,3 | head -1)
+curl "https://repo.anaconda.com/archive/Anaconda3-${latestVer}-Linux-x86_64.sh" > /tmp/install_anaconda.sh
+bash /tmp/install_anaconda.sh -b -p
+
+
 
 #Python3 PIP
 sudo apt-get --assume-yes install python3-pip

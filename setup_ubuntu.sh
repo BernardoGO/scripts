@@ -22,7 +22,7 @@ sudo apt-get --assume-yes install curl wget
 latestVer=$(curl 'https://repo.anaconda.com/archive/' | grep -oP 'href="Anaconda3-\K[0-9]+\.[0-9]+' | sort -t. -rn -k1,1 -k2,2 -k3,3 | head -1)
 curl "https://repo.anaconda.com/archive/Anaconda3-${latestVer}-Linux-x86_64.sh" > /tmp/install_anaconda.sh
 bash /tmp/install_anaconda.sh -b -p
-echo 'export PATH="/home/${USER}/anaconda3/bin:$PATH"' >> ~/.bashrc 
+
 
 
 
@@ -65,6 +65,9 @@ sudo apt-get --assume-yes install docker.io
 
 #Python packages
 yes | pip3 install argparse --user
+yes | pip3 install protobuf --user
+yes | pip3 install oauthlib --user
+yes | pip3 install requests_oauthlib --user
 yes | pip3 install matplotlib --user
 yes | pip3 install keras --user
 yes | pip3 install numpy --user
@@ -77,7 +80,9 @@ yes | pip3 install jupyter --user
 yes | pip3 install tensorflow-gpu --user
 yes | pip3 install sklearn --user
 yes | pip3 install opencv-python --user
-yes | pip install jupyterlab --user
+yes | pip3 install jupyterlab --user
+yes | pip3 install mlflow[extras] --user
+
 
 #GNOME Exts/Apps
 sudo apt-get --assume-yes install gnome-tweak-tool
@@ -128,6 +133,9 @@ sudo wget -O /usr/bin/clock_set https://raw.githubusercontent.com/BernardoGO/scr
 sudo chmod +x /usr/bin/monTemp
 
 
+#PATH Modifications in .bashrc
+echo 'export PATH="/home/${USER}/anaconda3/bin:$PATH"' >> ~/.bashrc 
+echo 'export PATH="/home/bernardo/.local/bin:$PATH"' >> ~/.bashrc 
 
 
 

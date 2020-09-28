@@ -1,6 +1,6 @@
-read -p "Setup GitHub? [Y/n]" -n 1 -r
+read -p "Setup GitHub credentials? [Y/n]" -n 1 -r configgithub
 echo  
-if [[ $REPLY =~ ^[Nn]$ ]]
+if [[ $configgithub =~ ^[Nn]$ ]]
 then
     echo "GitHub credentials not defined."
 else
@@ -34,8 +34,13 @@ sudo apt-get --assume-yes install automake make
 
 #Git
 sudo apt-get --assume-yes install git
-git config --global user.email ${github_email}
-git config --global user.name ${github_user}
+if [[ $configgithub =~ ^[Nn]$ ]]
+then
+    echo "Skipping GitHub Config"
+else
+    git config --global user.email ${github_email}
+    git config --global user.name ${github_user}
+fi
 
 #Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -59,19 +64,19 @@ sudo snap install discord
 sudo apt-get --assume-yes install docker.io
 
 #Python packages
-yes | sudo pip3 install argparse
-yes | sudo pip3 install matplotlib
-yes | sudo pip3 install keras
-yes | sudo pip3 install numpy
-yes | sudo pip3 install selenium
-yes | sudo pip3 install pandas
-yes | sudo pip3 install adjusttext
-yes | sudo pip3 install gym
-yes | sudo pip3 install gym[atari]
-yes | sudo pip3 install jupyter
-yes | sudo pip3 install tensorflow-gpu
-yes | sudo pip3 install sklearn
-yes | sudo pip3 install opencv-python
+yes | pip3 install argparse --user
+yes | pip3 install matplotlib --user
+yes | pip3 install keras --user
+yes | pip3 install numpy --user
+yes | pip3 install selenium --user
+yes | pip3 install pandas --user
+yes | pip3 install adjusttext --user
+yes | pip3 install gym --user
+yes | pip3 install gym[atari] --user
+yes | pip3 install jupyter --user
+yes | pip3 install tensorflow-gpu --user
+yes | pip3 install sklearn --user
+yes | pip3 install opencv-python --user
 yes | pip install jupyterlab --user
 
 #GNOME Exts/Apps

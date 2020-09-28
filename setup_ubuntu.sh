@@ -104,8 +104,9 @@ gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'terminat
 sudo wget -O /usr/bin/set_keybindings.py https://raw.githubusercontent.com/BernardoGO/scripts/master/gnome/set_keybindings.py
 sudo chmod +x /usr/bin/set_keybindings.py
 
-python3 set_keybindings.py 'Open Nautilus' 'nautilus' '<Super>e'  
-python3 set_keybindings.py 'Open Spotify' 'spotify' '<Super>w'  
+set_keybindings.py 'Open Nautilus' 'nautilus' '<Super>e'  
+set_keybindings.py 'Open Spotify' 'spotify' '<Super>w'  
+set_keybindings.py 'Open Chrome' 'google-chrome' '<Super>c'  
 
 #Script to run NTFSFIX on SDA1
 sudo echo -e "ntfsfix /dev/sda1" | sudo tee "/usr/bin/hdfix"

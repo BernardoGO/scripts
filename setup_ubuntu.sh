@@ -141,6 +141,8 @@ sudo chmod +x /usr/bin/monTemp
 echo 'export PATH="/home/${USER}/anaconda3/bin:$PATH"' >> ~/.bashrc 
 echo 'export PATH="/home/bernardo/.local/bin:$PATH"' >> ~/.bashrc 
 
-
+conda config
+conda config --set changeps1 False
+echo 'PS1="\033[01;34m┌──[<\$(basename \$CONDA_DEFAULT_ENV)> \D{%Y-%m-%d %H:%M:%S}] \033[01;32m[\u@\h] \w \033[03;34m\n└──[\$] → \[\033[00m\]"' >> ~/.bashrc 
 
 

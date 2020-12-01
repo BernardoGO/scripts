@@ -24,7 +24,7 @@ curl "https://repo.anaconda.com/archive/Anaconda3-${latestVer}-Linux-x86_64.sh" 
 bash /tmp/install_anaconda.sh -b -p
 
 
-
+sudo apt-get --assume-yes install cmake
 
 #Python3 PIP
 sudo apt-get --assume-yes install python3-pip
@@ -133,7 +133,7 @@ sudo chmod +x /usr/bin/clock_fix
 sudo wget -O /usr/bin/clock_set https://raw.githubusercontent.com/BernardoGO/scripts/master/clock/clock_set
 sudo chmod +x /usr/bin/clock_set
 
-sudo wget -O /usr/bin/clock_set https://raw.githubusercontent.com/BernardoGO/scripts/master/nvidia/monTemp
+sudo wget -O /usr/bin/monTemp https://raw.githubusercontent.com/BernardoGO/scripts/master/nvidia/monTemp
 sudo chmod +x /usr/bin/monTemp
 
 

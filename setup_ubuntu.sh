@@ -99,10 +99,20 @@ sudo apt-get --assume-yes install gimp
 sudo apt-get --assume-yes install inkscape
 #sudo apt-get --assume-yes install davinci-resolve
 
+# Balena Etcher
 echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
 sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
+
+# Notion Enhancer
+echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
+
 sudo apt update
+
+# Balena Etcher
 sudo apt-get --assume-yes install balena-etcher-electron
+
+# Notion Enhancer
+sudo apt-get --assume-yes install notion-app-enhanced
 
 #####CONFIGS
 
@@ -144,5 +154,5 @@ echo 'export PATH="/home/bernardo/.local/bin:$PATH"' >> ~/.bashrc
 conda config
 conda config --set changeps1 False
 echo 'PS1="\033[01;34m┌──[<\$(basename \$CONDA_DEFAULT_ENV)> \D{%Y-%m-%d %H:%M:%S}] \033[01;32m[\u@\h] \w \033[03;34m\n└──[\$] → \[\033[00m\]"' >> ~/.bashrc 
-
+conda init
 
